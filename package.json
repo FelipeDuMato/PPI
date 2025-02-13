@@ -1,0 +1,31 @@
+{
+  "name": "atividade-modulo-1",
+  "version": "1.0.0",
+  "description": "Pacote de Viagens, página",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FelipeDuMato/Atividade-Modulo-1.git"
+  },
+  "keywords": [
+    "Pacote",
+    "Viagem",
+    "Login",
+    "Cliente",
+    "Cadastro"
+  ],
+  "author": "Felipe Galante Fernandes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FelipeDuMato/Atividade-Modulo-1/issues"
+  },
+  "homepage": "https://github.com/FelipeDuMato/Atividade-Modulo-1#readme",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
