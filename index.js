@@ -25,10 +25,15 @@ app.post("/login", (req, resp) => {
     const password = req.body.password;
     if (login === "admin" && password === "admin") {
         req.session.autenticated = true;
-        resp.redirect('/pagini.html');
+        resp.redirect('/paginilog.html');
     } else {
         resp.redirect('/login.html');
     };
+});
+
+app.get("/logout", (req, resp) => {
+    req.session.destroy();
+    resp.redirect("/pagini.html")
 });
 
 app.use(express.static("./public"));

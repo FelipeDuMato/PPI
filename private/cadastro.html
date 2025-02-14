@@ -71,11 +71,13 @@
                     <li><a class="icon fa fa-twitter" href="#"></a></li>
                     <li><a class="icon fa fa-google-plus" href="#"></a></li>
                     <li><a class="icon fa fa-instagram" href="#"></a></li>
-                    <li><a class="button button-lg button-primary button-ujarak" href="login.html">Login</a></li> 
+                    <li><a href="/logout" style="border-color: red; background-color: red;" class="button button-lg button-primary button-ujarak" href="login.html">Logout</a></li> 
                   </ul>
                   <!-- RD Navbar Nav-->
                   <ul class="rd-navbar-nav">
                     <li class="rd-nav-item active"><a class="rd-nav-link" href="pagini.html">Início</a>
+                    </li>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="cadastro.html">Cliente</a>
                     </li>
                   </ul>
                 </div>
@@ -89,18 +91,34 @@
       <section class="container">
         <form method="post" action="/login" class="container-form">
             <div class="mb-3">
-              <label class="label-form" for="login">Login</label>
-              <input type="text" class="form-control" id="login" name="login">
+              <label class="label-form" for="login">CPF</label>
+              <input type="text" class="form-control" id="login" name="cpf">
             </div>
             <div class="mb-3">
-              <label for="password" class="label-form">Senha</label>
+              <label for="password" class="label-form">Nome</label>
               <input type="password" class="form-style form-control" name="password" id="password">
+            </div>
+            <div class="mb-3">
+              <label for="password" class="label-form">Endereco</label>
+              <input type="password" class="form-style form-control" name="password" id="address">
+            </div>
+            <div class="mb-3">
+              <label for="password" class="label-form">Bairro</label>
+              <input type="password" class="form-style form-control" name="password" id="neighborhood">
+            </div>
+            <div class="mb-3">
+              <label for="password" class="label-form">Cidade</label>
+              <input type="password" class="form-style form-control" name="password" id="city">
+            </div>
+            <div class="mb-3">
+              <label for="password" class="label-form">Estado</label>
+              <input type="password" class="form-style form-control" name="password" id="state">
             </div>
             <button type="submit" class="btn btn-primary">Enviar</button>
           </form>
       </section>
       </div>
-            <!-- Page Footer-->
+        <!-- Page Footer-->
             <footer class="section footer-corporate context-dark">
               <div class="footer-corporate-inset">
                 <div class="container">
@@ -199,4 +217,4 @@
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
   </body>
-</html>
+</html> 
