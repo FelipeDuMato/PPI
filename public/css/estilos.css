@@ -1,0 +1,19 @@
+.div-sect {
+    padding: 10%;
+}
+
+.mb-3 {
+    width: 35%;
+}
+
+.container-form {
+    justify-items: center;
+    background-color: #162e44;
+    padding: 5% 0%;
+    color: white;
+    border-radius: 15px;
+}
+
+.label-form {
+    font-size: larger;
+}
