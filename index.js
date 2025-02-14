@@ -42,4 +42,5 @@ app.use(autenticate, express.static("./private"));
 
 app.listen(porta, localhost, () => {
     console.log(`Servidor está rodando em: http://${localhost}:${porta}`);
+    console.log(`Recomendo entrar inicialmente na página: http://localhost:${porta}/pagini.html`)
 });
