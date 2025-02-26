@@ -29,7 +29,7 @@ var pacote1 = new PacoteViagem(2, "Ilha Maurício (Mauritius), África", "Inglê
 //     for (const cliente of listaPacotes) {
 //         console.log(cliente.toJSON());
 //     }
-// })
+// });
 
 
 const porta = 3000;
