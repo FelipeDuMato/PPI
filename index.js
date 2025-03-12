@@ -3,7 +3,7 @@ import autenticate from "./security/autenticate.js";
 import session from "express-session";
 import PacoteViagem from "./Model/pacoteviagem.js";
 
-var pacote = new PacoteViagem(1, "Benidorm, Comunidade Valenciana, Espanha", "Espanhol", "Euro", "UTC+1", "10/07/2025", "17/07/2025", 4000);
+var pacote = new PacoteViagem(1, "Benidorm, Comunidade Valência, Espanha", "Espanhol", "Euro", "UTC+1", "10/07/2025", "17/07/2025", 4000);
 
 var pacote1 = new PacoteViagem(2, "Ilha Maurício (Mauritius), África", "Inglês (oficial), Crioulo Mauriciano e Francês", "Rupia Mauriciana (MUR)", "UTC+4", "05/12/2025", "15/12/2025", 5130);
 
@@ -25,11 +25,11 @@ var pacote1 = new PacoteViagem(2, "Ilha Maurício (Mauritius), África", "Inglê
 //     console.log("Erro ao excluir o pacote: " + error);
 // });
 
-// pacote.listar().then((listaPacotes) => {
-//     for (const cliente of listaPacotes) {
-//         console.log(cliente.toJSON());
-//     }
-// })
+pacote.listar().then((listaPacotes) => {
+    for (const cliente of listaPacotes) {
+        console.log(cliente.toJSON());
+    }
+})
 
 
 const porta = 3000;
