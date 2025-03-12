@@ -33,8 +33,8 @@ export default class PacoteViagemDB {
                 pacoteViagem.id,
                 pacoteViagem.destino,
                 pacoteViagem.idioma,
-                pacoteViagem.fusoHorario,
                 pacoteViagem.moeda,
+                pacoteViagem.fusoHorario,
                 pacoteViagem.ida,
                 pacoteViagem.volta,
                 pacoteViagem.preco
@@ -81,8 +81,8 @@ export default class PacoteViagemDB {
                 registro.id,
                 registro.destino,
                 registro.idioma,
-                registro.fusohorario,
                 registro.moeda,
+                registro.fusohorario,
                 registro.ida,
                 registro.volta,
                 registro.preco

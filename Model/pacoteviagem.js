@@ -11,12 +11,12 @@ export default class PacoteViagem {
     #volta;
     #preco;
 
-    constructor(id, destino, idioma, fusoHorario, moeda, ida, volta, preco){
+    constructor(id, destino, idioma, moeda, fusoHorario, ida, volta, preco){
         this.#id = id;
         this.#destino = destino;
         this.#idioma = idioma;
-        this.#fusoHorario = fusoHorario;
         this.#moeda = moeda;
+        this.#fusoHorario = fusoHorario;
         this.#ida = ida;
         this.#volta = volta;
         this.#preco = preco;
@@ -31,12 +31,12 @@ export default class PacoteViagem {
     }
     get idioma(){
         return this.#idioma;
+    }    
+    get moeda(){
+        return this.#moeda;
     }
     get fusoHorario(){
         return this.#fusoHorario;
-    }
-    get moeda(){
-        return this.#moeda;
     }
     get ida(){
         return this.#ida;
@@ -57,12 +57,12 @@ export default class PacoteViagem {
     }
     set idioma(novoIdioma){
         this.#idioma = novoIdioma;
+    }    
+    set moeda(novaMoeda){
+        this.#moeda = novaMoeda;
     }
     set fusoHorario(novoFusoHorario){
         this.#fusoHorario = novoFusoHorario;
-    }
-    set moeda(novaMoeda){
-        this.#moeda = novaMoeda;
     }
     set ida(novaIda){
         this.#ida = novaIda;
@@ -80,8 +80,8 @@ export default class PacoteViagem {
             'id': this.#id,
             'destino': this.#destino,
             'idioma': this.#idioma,
-            'fusoHorario': this.#fusoHorario,
             'moeda': this.#moeda,
+            'fusoHorario': this.#fusoHorario,
             'ida': this.#ida,
             'volta': this.#volta,
             'preco': this.#preco
