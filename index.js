@@ -25,17 +25,19 @@ var pacote1 = new PacoteViagem(2, "Ilha Maurício (Mauritius), África", "Inglê
 //     console.log("Erro ao excluir o pacote: " + error);
 // });
 
-pacote.listar().then((listaPacotes) => {
-    for (const cliente of listaPacotes) {
-        console.log(cliente.toJSON());
-    }
-})
+// pacote.listar().then((listaPacotes) => {
+//     for (const cliente of listaPacotes) {
+//         console.log(cliente.toJSON());
+//     }
+// })
 
 
 const porta = 3000;
 const localhost = "0.0.0.0";
 const app = express();
 app.use(express.urlencoded({extended: true}));
+
+app.use("/pacotes", rotaPacote);
 
 app.use(session({
     secret: "M1nh@Ch4v3",
@@ -45,6 +47,7 @@ app.use(session({
         maxAge: 1000 * 60 * 15
     }
 }));
+
 
 app.get("/login", (req, resp) => {
     resp.redirect('/login.html');

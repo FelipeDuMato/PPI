@@ -57,12 +57,12 @@ export default class PacoteViagem {
     }
     set idioma(novoIdioma){
         this.#idioma = novoIdioma;
+    }    
+    set moeda(novaMoeda){
+        this.#moeda = novaMoeda;
     }
     set fusoHorario(novoFusoHorario){
         this.#fusoHorario = novoFusoHorario;
-    }
-    set moeda(novaMoeda){
-        this.#moeda = novaMoeda;
     }
     set ida(novaIda){
         this.#ida = novaIda;
@@ -80,8 +80,8 @@ export default class PacoteViagem {
             'id': this.#id,
             'destino': this.#destino,
             'idioma': this.#idioma,
-            'fusoHorario': this.#fusoHorario,
             'moeda': this.#moeda,
+            'fusoHorario': this.#fusoHorario,
             'ida': this.#ida,
             'volta': this.#volta,
             'preco': this.#preco
