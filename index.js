@@ -1,36 +1,6 @@
 import express from "express";
 import autenticate from "./security/autenticate.js";
 import session from "express-session";
-import PacoteViagem from "./Model/pacoteviagem.js";
-
-var pacote = new PacoteViagem(1, "Benidorm, Comunidade Valência, Espanha", "Espanhol", "Euro", "UTC+1", "10/07/2025", "17/07/2025", 4000);
-
-var pacote1 = new PacoteViagem(2, "Ilha Maurício (Mauritius), África", "Inglês (oficial), Crioulo Mauriciano e Francês", "Rupia Mauriciana (MUR)", "UTC+4", "05/12/2025", "15/12/2025", 5130);
-
-// pacote.gravar().then(() => {
-//     console.log("Pacote gravado com sucesso!");
-// }).catch((error) => {
-//     console.log("Erro ao gravar o pacote: " + error);
-// });
-
-// pacote.atualizar().then(() => {
-//     console.log("Pacote atualizado com sucesso!");
-// }).catch((error) => {
-//     console.log("Erro ao atualizar o pacote: " + error);
-// });
-
-// pacote.excluir().then(() => {
-//     console.log("Pacote excluído com sucesso!");
-// }).catch((error) => {
-//     console.log("Erro ao excluir o pacote: " + error);
-// });
-
-// pacote.listar().then((listaPacotes) => {
-//     for (const cliente of listaPacotes) {
-//         console.log(cliente.toJSON());
-//     }
-// })
-
 
 const porta = 3000;
 const localhost = "0.0.0.0";
@@ -45,7 +15,6 @@ app.use(session({
         maxAge: 1000 * 60 * 15
     }
 }));
-
 
 app.get("/login", (req, resp) => {
     resp.redirect('/login.html');
