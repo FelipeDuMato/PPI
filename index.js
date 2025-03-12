@@ -37,8 +37,6 @@ const localhost = "0.0.0.0";
 const app = express();
 app.use(express.urlencoded({extended: true}));
 
-app.use("/pacotes", rotaPacote);
-
 app.use(session({
     secret: "M1nh@Ch4v3",
     resave: false,
