@@ -8,6 +8,8 @@ const localhost = "0.0.0.0";
 const app = express();
 app.use(express.urlencoded({extended: true}));
 
+app.use("/pacotes", rotaPacote);
+
 app.use(session({
     secret: "M1nh@Ch4v3",
     resave: false,
@@ -16,8 +18,6 @@ app.use(session({
         maxAge: 1000 * 60 * 15
     }
 }));
-
-app.use("/pacotes", rotaPacote)
 
 
 app.get("/login", (req, resp) => {
