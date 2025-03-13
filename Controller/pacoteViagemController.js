@@ -55,7 +55,7 @@ export default class pvCtrl {
 
             if (id && destino && idioma && moeda && fusoHorario && ida && volta && preco) {
                 const pacote = new PacoteViagem(id, destino, idioma, moeda, fusoHorario, ida, volta, preco);
-                pacote.alterar().then(() => {
+                pacote.atualizar().then(() => {
                     resp.status(201).json({
                         "status" : true,
                         "mensagem" : "Pacote alterado com sucesso!"
