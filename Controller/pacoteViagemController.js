@@ -122,7 +122,7 @@ export default class pvCtrl {
             pacote.listar().then((listaPacotes) => {
                 resp.status(201).json({
                     "status" : true,
-                    "Pacotes" : listaPacotes
+                    "pacotes" : listaPacotes
                 });
             }).catch((error) => {
                 resp.status(500).json({

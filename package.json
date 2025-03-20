@@ -27,6 +27,7 @@
   "homepage": "https://github.com/FelipeDuMato/Atividade-Modulo-1#readme",
   "dependencies": {
     "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.11.3",
     "express": "^4.21.2",
     "express-session": "^1.18.1",
     "mysql2": "^3.12.0",

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="wide wow-animation" lang="en">
   <head>
-    <title>Login</title>
+    <title>Cadastro de Pacotes</title>
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
-    <link rel="stylesheet" href="estilos.css">
   </head>
   <body>
     <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
@@ -88,74 +88,106 @@
         </div>
       </header>
       <!--Content login-->
-      <div style="background-image: url(images/thumb-1920-1031883.jpg);" class="div-sect">
+      <div style="background-image: url(images/thumb-1920-1031883.jpg); background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: center;" class="div-sect">
       <section class="container">
-        <form method="post" action="/login" class="container-form">
+        <form method="POST" action="#" id="formPacote" class="g-3 needs-validation container-form" novalidate>
           <div class="mb-3">
-              <label class="label-form" for="destino">Destino</label>
-              <input type="text" class="form-control" id="detino" name="destino">
+            <label id="label-id" for="id" class="label-form">O campo ID só será ativado em caso de alteração ou exclusão de pacotes!</label>
+            <input type="text" class="form-control " id="id" name="id" required disabled>
+            <div class="valid-feedback">
             </div>
-            <div class="mb-3">
-              <label for="idioma" class="label-form">Idioma</label>
-              <input type="text" class="form-style form-control" name="idioma" id="idioma">
+            <div class="invalid-feedback">
+              Coloque um ID!
             </div>
-            <div class="mb-3">
-              <label for="moeda" class="label-form">Moeda</label>
-              <input type="number" class="form-style form-control" name="moeda" id="moeda">
+          </div>
+          <div class="mb-3">
+            <label for="destino" class="label-form">Destino</label>
+            <input type="text" class="form-control " id="destino" name="destino" required>
+            <div class="valid-feedback">
             </div>
-            <div class="mb-3">
-              <label for="fusoHoraio" class="label-form">Fuso Horário</label>
-              <select name="fusoHoraio" id="husoHorario" class="form-style form-control">
-                <option value="">Selecione...</option>
-                <option value="UTC-12">UTC-12</option>
-                <option value="UTC-11">UTC-11</option>
-                <option value="UTC-10">UTC-10</option>
-                <option value="UTC-9">UTC-9</option>
-                <option value="UTC-8">UTC-8</option>
-                <option value="UTC-7">UTC-7</option>
-                <option value="UTC-6">UTC-6</option>
-                <option value="UTC-5">UTC-5</option>
-                <option value="UTC-4">UTC-4</option>
-                <option value="UTC-3">UTC-3</option>
-                <option value="UTC-2">UTC-2</option>
-                <option value="UTC-1">UTC-1</option>
-                <option value="UTC+0">UTC+0</option>
-                <option value="UTC+1">UTC+1</option>
-                <option value="UTC+2">UTC+2</option>
-                <option value="UTC+3">UTC+3</option>
-                <option value="UTC+4">UTC+4</option>
-                <option value="UTC+5">UTC+5</option>
-                <option value="UTC+6">UTC+6</option>
-                <option value="UTC+7">UTC+7</option>
-                <option value="UTC+8">UTC+8</option>
-                <option value="UTC+9">UTC+9</option>
-                <option value="UTC+10">UTC+10</option>
-                <option value="UTC+11">UTC+11</option>
-                <option value="UTC+12">UTC+12</option>
-              </select>
+            <div class="invalid-feedback">
+              Coloque um destino!
             </div>
-            <div class="mb-3">
-              <label for="ida" class="label-form">Ida</label>
-              <input type="date" class="form-style form-control" name="ida" id="ida">
+          </div>
+          <div class="mb-3">
+            <label for="idioma" class="label-form">Idioma</label>
+            <input type="text" class="form-control " id="idioma" name="idioma" required>
+            <div class="valid-feedback">
             </div>
-            <div class="mb-3">
-              <label for="volta" class="label-form">Volta</label>
-              <input type="date" class="form-style form-control" name="volta" id="volta">
+            <div class="invalid-feedback">
+              Coloque um idioma!
             </div>
-            <div class="mb-3">
-              <label for="preco" class="label-form">Preço</label>
-              <input type="number" class="form-style form-control" name="peco" id="preco">
+          </div>
+          <div class="mb-3">
+            <label for="moeda" class="label-form">Moeda</label>
+            <input type="text" class="form-control " id="moeda" name="moeda" required>
+            <div class="valid-feedback">
             </div>
-            <div class="mb-3">
-              <label for="melhor-epoca" class="label-form">Melhor Época</label>
-              <input type="text" class="form-style form-control" name="melhor-epoca" id="melhor-epoca">
+            <div class="invalid-feedback">
+              Coloque uma moeda!
             </div>
-            <div class="mb-3">
-              <label for="descricao" class="label-form">Descrição</label>
-              <textarea name="descricao" id="descricao" class="form-style form-control"></textarea>
-              </div>
-              <button onclick="alert('Enviado!')" type="button" class="btn btn-primary">Enviar</button>
-          </form>
+          </div>
+          <div class="col-md-3">
+            <label for="fusoHorario" class="label-form">Fuso Horário</label>
+            <input type="text" class="form-control " id="fusoHorario" required>
+            <div class="invalid-feedback">
+              Coloque um Fuso Horário!
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="ida" class="label-form">Data de Ida</label> 
+            <input type="text" class="form-control " id="ida" name="ida" required>
+            <div class="valid-feedback">
+            </div>
+            <div class="invalid-feedback">
+              Coloque uma data de ida!
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="volta" class="label-form">Data de Volta</label>
+            <input type="text" class="form-control " id="volta" name="volta" required>
+            <div class="valid-feedback">
+            </div>
+            <div class="invalid-feedback">
+              Coloque uma data de volta!
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="preco" class="label-form">Preço</label>
+            <input type="text" class="form-control " id="preco" name="preco" required>
+            <div class="valid-feedback">
+            </div>
+            <div class="invalid-feedback">
+              Coloque um preço!
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="melhorEpoca" class="label-form">Melhor Época</label>
+            <input type="text" class="form-control " id="melhorEpoca" required>
+            <div class="valid-feedback">
+            </div>
+            <div class="invalid-feedback">
+              Coloque uma melhor época!
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="descricao" class="label-form">Descrição</label>
+            <input type="text" class="form-control " id="descricao" required>
+            <div class="valid-feedback">
+            </div>
+            <div class="invalid-feedback">
+              Coloque uma descrição!
+            </div>
+          </div>
+          <button id="cadastrar" class="btn btn-success" type="submit">CADASTRAR</button>
+          <button id="atualizar" type="button" class= "btn btn-warning" style="color: white" disabled>ATUALIZAR</button>
+          <button id="apagar" type="button" class="btn btn-danger" disabled>APAGAR</button>
+          <br><br>
+          <div id="form-feedback">
+          </div>
+          <div id="tabelaPacotes">
+          </div>
+        </form>
         </section>
       </div>
         <!-- Page Footer-->
@@ -255,5 +287,6 @@
     <!-- Javascript-->
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="./scripts/scriptPacotes.js"></script>
   </body>
 </html> 

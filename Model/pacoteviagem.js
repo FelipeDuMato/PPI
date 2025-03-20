@@ -11,7 +11,7 @@ export default class PacoteViagem {
     #volta;
     #preco;
     #melhorEpoca;
-    #descricao
+    #descricao;
 
     constructor(id, destino, idioma, moeda, fusoHorario, ida, volta, preco, melhorEpoca, descricao){
         this.#id = id;
@@ -108,7 +108,7 @@ export default class PacoteViagem {
 
     async gravar(){
         const pacoDB = new PacoteViagemDB();
-        pacoDB.gravar(this);
+        this.#id = await pacoDB.gravar(this);
     }
     async atualizar(){
         const pacoDB = new PacoteViagemDB();

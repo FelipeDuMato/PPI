@@ -11,16 +11,16 @@ export default class PacoteViagemDB {
         try {
         const connection = await connect();
         const sql = `CREATE TABLE IF NOT EXISTS pacoteviagem (
-        id INT NOT NULL,
+        id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
         destino VARCHAR(100) NOT NULL,
         idioma VARCHAR(50) NOT NULL,
         moeda VARCHAR(50) NOT NULL,
         fusohorario VARCHAR(6) NOT NULL,
         ida VARCHAR(10) NOT NULL,
         volta VARCHAR(10) NOT NULL,
-        preco DOUBLE NOT NULL),
+        preco DOUBLE NOT NULL,
         melhorEpoca VARCHAR(100) NOT NULL,
-        descricao VARCHAR(500) NOT NULL`;
+        descricao VARCHAR(500) NOT NULL)`;
         await connection.execute(sql);
         } catch (error) {
             console.log("Erro ao criar a tabela pacoteviagem: " + error);
@@ -30,9 +30,8 @@ export default class PacoteViagemDB {
     async gravar(pacoteViagem){
         if (pacoteViagem instanceof PacoteViagem) {
             const connection = await connect();
-            const sql = `INSERT INTO pacoteviagem (id, destino, idioma, moeda, fusohorario, ida, volta, preco, melhorEpoca, descricao) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+            const sql = `INSERT INTO pacoteviagem (destino, idioma, moeda, fusohorario, ida, volta, preco, melhorEpoca, descricao) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`;
             const param = [
-                pacoteViagem.id,
                 pacoteViagem.destino,
                 pacoteViagem.idioma,
                 pacoteViagem.moeda,
@@ -63,6 +62,7 @@ export default class PacoteViagemDB {
                 pacoteViagem.descricao,
                 pacoteViagem.id
             ];
+            console.log(param)
             await connection.execute(sql, param);
             await connection.release();
         }
