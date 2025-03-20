@@ -10,8 +10,10 @@ export default class PacoteViagem {
     #ida;
     #volta;
     #preco;
+    #melhorEpoca;
+    #descricao
 
-    constructor(id, destino, idioma, moeda, fusoHorario, ida, volta, preco){
+    constructor(id, destino, idioma, moeda, fusoHorario, ida, volta, preco, melhorEpoca, descricao){
         this.#id = id;
         this.#destino = destino;
         this.#idioma = idioma;
@@ -20,6 +22,8 @@ export default class PacoteViagem {
         this.#ida = ida;
         this.#volta = volta;
         this.#preco = preco;
+        this.#melhorEpoca = melhorEpoca;
+        this.#descricao = descricao;
     }
 
     // Gets
@@ -47,6 +51,12 @@ export default class PacoteViagem {
     get preco(){
         return this.#preco;
     }
+    get melhorEpoca(){
+        return this.#melhorEpoca
+    }
+    get descricao(){
+        return this.#descricao
+    }
 
     // Sets
     set id(novoId){
@@ -73,6 +83,12 @@ export default class PacoteViagem {
     set preco(novoPreco){
         this.#preco = novoPreco;
     }
+    set melhorEpoca(novaEpoca){
+        this.#melhorEpoca = novaEpoca;
+    }
+    set descricao(novaDesc){
+        this.#descricao = novaDesc
+    }
 
     //Métodos
     toJSON(){
@@ -84,7 +100,9 @@ export default class PacoteViagem {
             'fusoHorario': this.#fusoHorario,
             'ida': this.#ida,
             'volta': this.#volta,
-            'preco': this.#preco
+            'preco': this.#preco,
+            "melhorEpoca" : this.#melhorEpoca,
+            "descricao" : this.#descricao
         }
     }
 

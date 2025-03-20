@@ -13,9 +13,11 @@ export default class pvCtrl {
             const ida = dados.ida;
             const volta = dados.volta;
             const preco = dados.preco;
+            const melhorEpoca = dados.melhorEpoca;
+            const descricao = dados.descricao
 
-            if (id && destino && idioma && moeda && fusoHorario && ida && volta && preco) {
-                const pacote = new PacoteViagem(id, destino, idioma, moeda, fusoHorario, ida, volta, preco);
+            if (id && destino && idioma && moeda && fusoHorario && ida && volta && preco, melhorEpoca, descricao) {
+                const pacote = new PacoteViagem(id, destino, idioma, moeda, fusoHorario, ida, volta, preco, melhorEpoca, descricao);
                 pacote.gravar().then(() => {
                     resp.status(201).json({
                         "status" : true,
@@ -52,9 +54,11 @@ export default class pvCtrl {
             const ida = dados.ida;
             const volta = dados.volta;
             const preco = dados.preco;
+            const melhorEpoca = dados.melhorEpoca;
+            const descricao = dados.descricao;
 
-            if (id && destino && idioma && moeda && fusoHorario && ida && volta && preco) {
-                const pacote = new PacoteViagem(id, destino, idioma, moeda, fusoHorario, ida, volta, preco);
+            if (id && destino && idioma && moeda && fusoHorario && ida && volta && preco, melhorEpoca, descricao) {
+                const pacote = new PacoteViagem(id, destino, idioma, moeda, fusoHorario, ida, volta, preco, melhorEpoca, descricao);
                 pacote.atualizar().then(() => {
                     resp.status(201).json({
                         "status" : true,

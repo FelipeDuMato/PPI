@@ -18,7 +18,9 @@ export default class PacoteViagemDB {
         fusohorario VARCHAR(6) NOT NULL,
         ida VARCHAR(10) NOT NULL,
         volta VARCHAR(10) NOT NULL,
-        preco DOUBLE NOT NULL)`;
+        preco DOUBLE NOT NULL),
+        melhorEpoca VARCHAR(100) NOT NULL,
+        descricao VARCHAR(500) NOT NULL`;
         await connection.execute(sql);
         } catch (error) {
             console.log("Erro ao criar a tabela pacoteviagem: " + error);
@@ -28,7 +30,7 @@ export default class PacoteViagemDB {
     async gravar(pacoteViagem){
         if (pacoteViagem instanceof PacoteViagem) {
             const connection = await connect();
-            const sql = `INSERT INTO pacoteviagem (id, destino, idioma, moeda, fusohorario, ida, volta, preco) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`;
+            const sql = `INSERT INTO pacoteviagem (id, destino, idioma, moeda, fusohorario, ida, volta, preco, melhorEpoca, descricao) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
             const param = [
                 pacoteViagem.id,
                 pacoteViagem.destino,
@@ -37,7 +39,9 @@ export default class PacoteViagemDB {
                 pacoteViagem.fusoHorario,
                 pacoteViagem.ida,
                 pacoteViagem.volta,
-                pacoteViagem.preco
+                pacoteViagem.preco,
+                pacoteViagem.melhorEpoca,
+                pacoteViagem.descricao
             ]
             await connection.execute(sql, param);
             await connection.release();
@@ -46,7 +50,7 @@ export default class PacoteViagemDB {
     async atualizar(pacoteViagem){
         if (pacoteViagem instanceof PacoteViagem) {
             const connection = await connect();
-            const sql = `UPDATE pacoteviagem SET destino = ?, idioma = ?, moeda = ?, fusohorario = ?, ida = ?, volta = ?, preco = ? WHERE id = ?`;
+            const sql = `UPDATE pacoteviagem SET destino = ?, idioma = ?, moeda = ?, fusohorario = ?, ida = ?, volta = ?, preco = ?, melhorEpoca = ?, descricao = ? WHERE id = ?`;
             const param = [
                 pacoteViagem.destino,
                 pacoteViagem.idioma,
@@ -55,6 +59,8 @@ export default class PacoteViagemDB {
                 pacoteViagem.ida,
                 pacoteViagem.volta,
                 pacoteViagem.preco,
+                pacoteViagem.melhorEpoca,
+                pacoteViagem.descricao,
                 pacoteViagem.id
             ];
             await connection.execute(sql, param);
@@ -85,7 +91,9 @@ export default class PacoteViagemDB {
                 registro.fusohorario,
                 registro.ida,
                 registro.volta,
-                registro.preco
+                registro.preco,
+                registro.melhorEpoca,
+                registro.descricao
             )
             listaPacotes.push(pacote);
         }
