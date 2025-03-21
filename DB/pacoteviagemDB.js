@@ -11,14 +11,14 @@ export default class PacoteViagemDB {
         try {
         const connection = await connect();
         const sql = `CREATE TABLE IF NOT EXISTS pacoteviagem (
-        id INT NOT NULL,
+        id VARCHAR(50) NOT NULL,
         destino VARCHAR(100) NOT NULL,
         idioma VARCHAR(50) NOT NULL,
         moeda VARCHAR(50) NOT NULL,
         fusohorario VARCHAR(6) NOT NULL,
         ida VARCHAR(10) NOT NULL,
         volta VARCHAR(10) NOT NULL,
-        preco DOUBLE NOT NULL)`;
+        preco VARCHAR(15) NOT NULL)`;
         await connection.execute(sql);
         } catch (error) {
             console.log("Erro ao criar a tabela pacoteviagem: " + error);

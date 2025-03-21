@@ -7,9 +7,9 @@ export default async function connect(){
         global.poolConnection = mysql.createPool({
             host: 'localhost',
             user: 'root',
-            database: 'bdpacoteviagem',
+            database: 'estudos',
             port : 3306,
-            password: '1004FefeSqL)6',
+            password: '1234',
             waitForConnections: true,
             connectionLimit: 15,
             maxIdle: 10, // max idle connections, the default value is the same as `connectionLimit`
