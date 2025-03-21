@@ -177,6 +177,12 @@ function atualizarPacote(){
     }).catch((error) =>{
         mostrarMensg(error, "danger");
     })
+    acao = "cadastrar";
+    document.getElementById("cadastrar").disabled = false;
+    document.getElementById("atualizar").disabled = true;
+    document.getElementById("apagar").disabled = true;
+    formPacote.reset();
+    mostrarTabelaPac();
 }
 
 function apagarPacote(){
@@ -198,6 +204,12 @@ function apagarPacote(){
     }).catch((error) =>{
         mostrarMensg(error, "danger");
     })
+    acao = "cadastrar";
+    document.getElementById("cadastrar").disabled = false;
+    document.getElementById("atualizar").disabled = true;
+    document.getElementById("apagar").disabled = true;
+    formPacote.reset();
+    mostrarTabelaPac();
 }
 
 document.getElementById("atualizar").onclick = atualizarPacote;
