@@ -1,11 +1,14 @@
 import express from "express";
+import rotaPacote from "./Routes/rotaPacote.js";
 import autenticate from "./security/autenticate.js";
 import session from "express-session";
 
 const porta = 3000;
 const localhost = "0.0.0.0";
+
 const app = express();
 app.use(express.urlencoded({extended: true}));
+app.use(express.json());
 
 app.use(session({
     secret: "M1nh@Ch4v3",
@@ -15,6 +18,8 @@ app.use(session({
         maxAge: 1000 * 60 * 15
     }
 }));
+
+app.use("/pacotes", rotaPacote);
 
 app.get("/login", (req, resp) => {
     resp.redirect('/login.html');
@@ -40,7 +45,6 @@ app.use(express.static("./public"));
 
 app.use(autenticate, express.static("./private"));
 
-app.listen(porta, localhost, () => {
-    console.log(`Servidor está rodando em: http://${localhost}:${porta}`);
-    console.log(`Recomendo entrar inicialmente na página: http://localhost:${porta}/pagini.html`)
+app.listen(porta, localhost, () =>{
+    console.log("Serividor rodando em: http://"+localhost+":"+porta);
 });

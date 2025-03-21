@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="wide wow-animation" lang="en">
   <head>
-    <title>Login</title>
+    <title>Cadastrar Pacotes</title>
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
   </head>
   <body>
@@ -77,7 +78,7 @@
                   <ul class="rd-navbar-nav">
                     <li class="rd-nav-item"><a class="rd-nav-link" href="paginilog.html">Início</a>
                     </li>
-                    <li class="rd-nav-item active"><a class="rd-nav-link" href="cadastro.html">Cliente</a>
+                    <li class="rd-nav-item active"><a class="rd-nav-link" href="cadastro.html">Cadastrar Pacotes</a>
                     </li>
                   </ul>
                 </div>
@@ -89,33 +90,92 @@
       <!--Content login-->
       <div style="background-image: url(images/thumb-1920-1031883.jpg);" class="div-sect">
       <section class="container">
-        <form method="post" action="/login" class="container-form">
-            <div class="mb-3">
-              <label class="label-form" for="login">CPF</label>
-              <input type="text" class="form-control" id="login" name="cpf">
+        <form id="formuPacotes" method="POST" action="#" class="container-form g-3 needs-validation" novalidate>
+          <div class="col-md-4">
+            <label for="identify" class="label-form">ID</label>
+            <input type="text" class="form-control" id="identify" required>
+            <div class="valid-feedback">
             </div>
-            <div class="mb-3">
-              <label for="password" class="label-form">Nome</label>
-              <input type="password" class="form-style form-control" name="password" id="password">
+            <div class="invalid-feedback">
+              Coloque um ID!
             </div>
-            <div class="mb-3">
-              <label for="password" class="label-form">Endereco</label>
-              <input type="password" class="form-style form-control" name="password" id="address">
+          </div>
+          <div class="col-md-4">
+            <label for="destino" class="label-form">Destino</label>
+            <input type="text" class="form-control" id="destino" required>
+            <div class="valid-feedback">
             </div>
-            <div class="mb-3">
-              <label for="password" class="label-form">Bairro</label>
-              <input type="password" class="form-style form-control" name="password" id="neighborhood">
+            <div class="invalid-feedback">
+              Coloque um destino!
             </div>
-            <div class="mb-3">
-              <label for="password" class="label-form">Cidade</label>
-              <input type="password" class="form-style form-control" name="password" id="city">
+          </div>
+          <div class="col-md-4">
+            <label for="idioma" class="label-form">Idioma</label>
+            <input type="text" class="form-control" id="idioma" required>
+            <div class="valid-feedback">
             </div>
-            <div class="mb-3">
-              <label for="password" class="label-form">Estado</label>
-              <input type="password" class="form-style form-control" name="password" id="state">
+            <div class="invalid-feedback">
+              Coloque um idioma!
             </div>
-            <button onclick="alert('Enviado!')" type="button" class="btn btn-primary">Enviar</button>
-          </form>
+          </div>
+          <div class="col-md-4">
+            <label for="moeda" class="label-form">Moeda</label>
+            <input type="text" class="form-control" id="moeda" required>
+            <div class="valid-feedback">
+            </div>
+            <div class="invalid-feedback">
+              Coloque uma moeda!
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label for="fusoHorario" class="label-form">Fuso Horário</label>
+            <input type="text" class="form-control" id="fusoHorario" required>
+            <div class="valid-feedback">
+            </div>
+            <div class="invalid-feedback">
+              Coloque um fuso horário!
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label for="ida" class="label-form">Data de ida</label>
+            <input type="text" class="form-control" id="ida" required>
+            <div class="valid-feedback">
+            </div>
+            <div class="invalid-feedback">
+              Coloque uma data de ida!
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label for="volta" class="label-form">Data de volta</label>
+            <input type="text" class="form-control" id="volta" required>
+            <div class="valid-feedback">
+            </div>
+            <div class="invalid-feedback">
+              Coloque uma data de volta!
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label for="preco" class="label-form">Preço</label>
+            <input type="text" class="form-control" id="preco" required>
+            <div class="valid-feedback">
+            </div>
+            <div class="invalid-feedback">
+              Coloque um preço!
+            </div>
+          </div>
+          <div class="col-12"><br>
+            <button id="cadastrar" class="btn btn-primary" type="submit">Cadastrar</button>
+            <button id="atualizar" class="btn btn-warning" type="button" style="color: white;" disabled>ATUALIZAR</button>
+            <button id="apagar" class="btn btn-danger" type="button" disabled>APAGAR</button>
+          </div>
+          <br><br><br>
+          <div id="mensagem">
+
+          </div>
+          <div id="tabelaPac">
+
+          </div>
+        </form>
       </section>
       </div>
         <!-- Page Footer-->
@@ -176,7 +236,7 @@
                         <div class="wow slideInLeft" data-wow-delay="0s">
                           <h6 class="text-spacing-100 text-uppercase">Links rápidos</h6>
                           <ul class="row-6 list-0 list-marked list-marked-md list-marked-secondary list-custom-2">
-                            <li><a href="cadastro.html">Cliente</a></li>
+                            <li><a href="cadastro.html">Cadastrar Pacotes</a></li>
                           </ul>
                           <div class="group-md group-middle justify-content-sm-start"></div>
                         </div>
@@ -215,5 +275,6 @@
     <!-- Javascript-->
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="./Scripts/cadastrarPacote.js"></script>
   </body>
 </html> 
